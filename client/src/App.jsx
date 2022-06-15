@@ -6,7 +6,8 @@ import styled from 'styled-components';
 
 import './App.css';
 
-import { Channel, ChannelContainer } from './components';
+import ChannelContainer from './components/ChannelContainer';
+import Channel from './components/Channel';
 
 const App_wrapper = styled.div `
   display: flex;
