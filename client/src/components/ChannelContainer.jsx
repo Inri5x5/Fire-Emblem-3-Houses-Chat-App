@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import SideBar from './SideBar.jsx';
 import Header from './Header';
 import ChannelSearch from './ChannelSearch.jsx';
+import TeamChannelList from './TeamChannelList.jsx';
+import TeamChannelPreview from './TeamChannelPreview.jsx';
 
 const ChannelContainer = () => {
   const ListWrapper = styled.div`
@@ -21,6 +23,25 @@ const ChannelContainer = () => {
       <ListWrapper>
         <Header />
         <ChannelSearch />
+        <ChannelList
+          filters={{}}
+          channelRenderFilterFn={ () => {} }
+          List={(props_list) => {
+            console.log(props_list)
+            return (
+              <TeamChannelList
+                  {...props_list}
+                  type="team"
+              />
+            )
+          }}
+          Preview={(preview_props) => (
+            <TeamChannelPreview
+              {...preview_props}
+              type="team"
+            />
+          )}
+        />
       </ListWrapper>
     </>
   )
